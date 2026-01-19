@@ -1,5 +1,4 @@
-// Status.java
-public enum status {
+public enum Status {
     PENDING,
     IN_PROGRESS,
     DONE

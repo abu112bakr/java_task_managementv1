@@ -2,14 +2,22 @@ public class Task {
     private int id;
     private String title;
     private String description;
-    //onject
-    private status varstatus;
+    //object
+    private Status varstatus;
     // Constructor
-    public Task(int id, String title, String description, status varstatus) {
+    public Task(int id, String title, String description, Status status) {
         this.id = id;
         this.title = title;
         this.description = description;
-        this.varstatus = status.PENDING;
+        if (status == Status.PENDING){
+            this.varstatus = Status.PENDING;
+        }
+        else if (status == Status.IN_PROGRESS){
+            this.varstatus = Status.IN_PROGRESS;
+        }
+        else if (status == Status.DONE){
+            this.varstatus = Status.DONE;
+        }
     }
     // returning items
     public int getid(){
@@ -22,13 +30,11 @@ public class Task {
     public String description(){
         return this.description + " best description ever";
     }
-    public status getvarstatus(){
+    public Status getvarstatus(){
         return this.varstatus;
     }
-    public status statusupdate(String newstatus) {
-        if (newstatus == "PENDING"){
-
-        }
+    public Status statusupdate(Status newstatus) {
+        this.varstatus = newstatus;
         return this.varstatus;
     }
     public String getdisplay(){
