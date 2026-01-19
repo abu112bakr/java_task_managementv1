@@ -29,11 +29,6 @@ public class main {
                 createTask(givenid, giventitle, givendescription, givenstatus);
             } else if (userInput.equals("VIEW TASK")) {
                 viewTask();
-                // System.out.println("VIEWING ALL TASKS");
-                // for (Task itask : taskaArrayList) {
-                //     //System.out.println(itask.getid());
-                //     System.out.println(itask.getdisplay());
-                // }
             } else if (userInput.equals("UPDATE STATUS")) {
                 System.out.println("Enter Task ID");
                 int userinput_id = scanner.nextInt();
@@ -41,7 +36,13 @@ public class main {
                 System.out.println("Please enter New Status(PENDING, IN_PROGRESS, DONE)");
                 String userinput_status = scanner.nextLine();
                 updateTask(userinput_id,userinput_status);
+            } else if (userInput.equals("DELETE TASK")){
+                System.out.println("Enter Task ID");
+                int userinput_id2 = scanner.nextInt();
+                scanner.nextLine(); // Consume the newline character     
+                deleteTask(userinput_id2);           
             }
+
              else {
                 System.out.println("INVALID OPTION. PLEASE TRY AGAIN.");
             }
@@ -68,6 +69,7 @@ public class main {
             System.out.println("itask.getid(): "+itask.getid()+ " userid: "+userinput_id);
             //System.out.println((itask.getid()) == (userinput_id));
             if ((itask.getid()) == (userinput_id)){
+                found = true;
                 System.out.println("entered first IF");
                 // task object found
                 Status v1; // v1 is Status variable
@@ -82,14 +84,43 @@ public class main {
                     v1 = Status.PENDING;
                 }
                 itask.statusupdate(v1);
+                System.out.println("TASK ID: "+ itask.getid() + " Has been successfully updagted to: "+itask.getvarstatus());
             }
-
-
+            i++;
+        }
+    }
+    private static void deleteTask(int userinput_id){
+        int i = 0;
+        boolean found = false;
+        while (i < taskaArrayList.size() || !found){
+            // itask is the object
+            Task itask = taskaArrayList.get(i);
+            System.out.println("iTask: "+itask);
+            System.out.println("itask.getid(): "+itask.getid()+ " userid: "+userinput_id);
+            //System.out.println((itask.getid()) == (userinput_id));
+            if ((itask.getid()) == (userinput_id)){
+                found = true;
+                System.out.println("entered first IF");
+                // task object found
+                System.out.println("TASK ID: "+ itask.getid() + "Has been successfully deleted");
+                taskaArrayList.remove(i);
+                // Status v1; // v1 is Status variable
+                // if (userinput_status.equals("PENDING")){
+                //     v1 = Status.PENDING;
+                // } else if (userinput_status.equals("IN_PROGRESS")){
+                //     v1 = Status.IN_PROGRESS;
+                // } else if (userinput_status.equals("DONE")) {
+                //     v1 = Status.DONE;
+                // } else {
+                //     //defult to pending
+                //     v1 = Status.PENDING;
+                // }
+                // itask.statusupdate(v1);
+            }
             i++;
         }
 
     }
-
     private static void createTask(int id, String title, String description, String status) {
         // // Task creation logic will go here
         // System.out.println("Enter Task ID: 700");
