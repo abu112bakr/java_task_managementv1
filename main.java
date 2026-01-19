@@ -65,9 +65,23 @@ public class main {
             // itask is the object
             Task itask = taskaArrayList.get(i);
             System.out.println("iTask: "+itask);
-            if (itask.getid() == userinput_id){
-                // object found
-                
+            System.out.println("itask.getid(): "+itask.getid()+ " userid: "+userinput_id);
+            //System.out.println((itask.getid()) == (userinput_id));
+            if ((itask.getid()) == (userinput_id)){
+                System.out.println("entered first IF");
+                // task object found
+                Status v1; // v1 is Status variable
+                if (userinput_status.equals("PENDING")){
+                    v1 = Status.PENDING;
+                } else if (userinput_status.equals("IN_PROGRESS")){
+                    v1 = Status.IN_PROGRESS;
+                } else if (userinput_status.equals("DONE")) {
+                    v1 = Status.DONE;
+                } else {
+                    //defult to pending
+                    v1 = Status.PENDING;
+                }
+                itask.statusupdate(v1);
             }
 
 
