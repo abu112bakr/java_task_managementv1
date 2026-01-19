@@ -11,8 +11,27 @@ public class Task {
         this.description = description;
         this.varstatus = status.PENDING;
     }
+    // returning items
+    public int getid(){
+        return this.id;
+    }
+    public  String getTitle() {
+        //return this.title + " best title ever";
+        return this.title;
+    }
+    public String description(){
+        return this.description + " best description ever";
+    }
+    public status getvarstatus(){
+        return this.varstatus;
+    }
+    public status statusupdate(String newstatus) {
+        if (newstatus == "PENDING"){
 
-    public String getTitle() {
-        return title + " best title ever";
+        }
+        return this.varstatus;
+    }
+    public String getdisplay(){
+        return "ID: " + this.id + ", Title: " + this.title + ", Description: " + this.description + ", Status: " + this.varstatus;
     }
 }
