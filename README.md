@@ -174,7 +174,7 @@ TaskManagementSystem/
 1. Clone the repository
 
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/abu112bakr/java_task_managementv1.git
    ```
 2. Compile the program
 
