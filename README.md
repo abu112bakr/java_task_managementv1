@@ -61,33 +61,58 @@ The following interaction is taken directly from the running application:
 
 ```
 WELCOME TO TASK MANAGEMENT SYSTEM
+
 ############## MAIN MENU ##############
+
 PLEASE SELECT AN OPTION: ADD TASK, VIEW TASK, UPDATE STATUS, DELETE TASK, EXIT
 
 ADD TASK
+
 Enter Task ID(integer):
+
 100
+
 Enter Title(string):
+
 TITLE 1
+
 Enter Description(string):
+
 DESCRITION 1
+
 Please enter Status(PENDING, IN_PROGRESS, DONE):
+
 PENDING
+
 ID: 100, Title: TITLE 1, Description: DESCRITION 1, Status: PENDING has been successfully created
 
+
+
 VIEW TASK
+
 ID: 100, Title: TITLE 1, Description: DESCRITION 1, Status: PENDING
 
 UPDATE STATUS
+
 Enter Task ID
+
 100
+
 Please enter New Status(PENDING, IN_PROGRESS, DONE)
+
 IN_PROGRESS
+
 TASK ID: 100 Has been successfully updagted to: IN_PROGRESS
 
+
+
+
 DELETE TASK
+
 Enter Task ID
+
 100
+
 TASK ID: 100 Has been successfully deleted
 
 EXIT
