@@ -12,7 +12,7 @@ public class main {
             System.out.println("PLEASE SELECT AN OPTION: ADD TASK, VIEW TASK, UPDATE STATUS, DELETE TASK, EXIT");
             Scanner scanner = new Scanner(System.in);
             String userInput = scanner.nextLine();
-            System.out.println(userInput);
+            //System.out.println(userInput);
             if (userInput.equals("EXIT")){
                 mycondition = false;
             } else if (userInput.equals("ADD TASK")) {
@@ -20,7 +20,7 @@ public class main {
                 System.out.println("Enter Task ID(integer):");
                 int givenid = scanner.nextInt();
                 scanner.nextLine(); // Consume the newline character
-                System.out.println("Enter Title(string):");
+                System.out.println("Enter Title(string)");
                 String giventitle = scanner.nextLine();
                 System.out.println("Enter Description(string)");
                 String givendescription = scanner.nextLine();
@@ -46,10 +46,8 @@ public class main {
              else {
                 System.out.println("INVALID OPTION. PLEASE TRY AGAIN.");
             }
-
-
             //mycondition = false;
-            System.out.println("outside loop");
+            //System.out.println("outside loop");
         }
     }
     private static void viewTask(){
@@ -65,12 +63,12 @@ public class main {
         while (i < taskaArrayList.size() || !found){
             // itask is the object
             Task itask = taskaArrayList.get(i);
-            System.out.println("iTask: "+itask);
-            System.out.println("itask.getid(): "+itask.getid()+ " userid: "+userinput_id);
+            //System.out.println("iTask: "+itask);
+            //System.out.println("itask.getid(): "+itask.getid()+ " userid: "+userinput_id);
             //System.out.println((itask.getid()) == (userinput_id));
             if ((itask.getid()) == (userinput_id)){
                 found = true;
-                System.out.println("entered first IF");
+                //System.out.println("entered first IF");
                 // task object found
                 Status v1; // v1 is Status variable
                 if (userinput_status.equals("PENDING")){
@@ -95,12 +93,12 @@ public class main {
         while (i < taskaArrayList.size() || !found){
             // itask is the object
             Task itask = taskaArrayList.get(i);
-            System.out.println("iTask: "+itask);
-            System.out.println("itask.getid(): "+itask.getid()+ " userid: "+userinput_id);
+            //System.out.println("iTask: "+itask);
+            //System.out.println("itask.getid(): "+itask.getid()+ " userid: "+userinput_id);
             //System.out.println((itask.getid()) == (userinput_id));
             if ((itask.getid()) == (userinput_id)){
                 found = true;
-                System.out.println("entered first IF");
+                //System.out.println("entered first IF");
                 // task object found
                 System.out.println("TASK ID: "+ itask.getid() + "Has been successfully deleted");
                 taskaArrayList.remove(i);
@@ -121,19 +119,7 @@ public class main {
         }
 
     }
-    private static void createTask(int id, String title, String description, String status) {
-        // // Task creation logic will go here
-        // System.out.println("Enter Task ID: 700");
-        // int id = 700;
-        // System.out.println("Enter Title: Clean Dhaka");
-        // String title = "Clean Dhaka";
-        // System.out.println("Enter Description: We are going to clean Dhaka city");
-        // String description = "We are going to clean Dhaka city";
-        // System.out.println("Enter Status: PENDING");
-        // status varStatus = status.PENDING;
-        // // Creating a new Task object
-        // System.out.println("#################################################################################");
-        
+    private static void createTask(int id, String title, String description, String status) {        
         //must pass enum object
         Status varstatus;
         if (status.equals("PENDING")){
@@ -151,7 +137,7 @@ public class main {
         Task task = new Task(id, title, description, varstatus);
         taskaArrayList.add(task);
         //System.out.println(task.getTitle());
-        System.out.println(task.getdisplay());
+        System.out.println(task.getdisplay()+ " has been successfully created");
     }
 
 
