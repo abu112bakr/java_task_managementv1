@@ -46,15 +46,12 @@ public class main {
              else {
                 System.out.println("INVALID OPTION. PLEASE TRY AGAIN.");
             }
-            //mycondition = false;
-            //System.out.println("outside loop");
         }
     }
     private static void viewTask(){
         System.out.println("VIEWING ALL TASKS");
         for (Task itask : taskaArrayList) {
             System.out.println(itask.getdisplay());
-            //System.out.println(itask.getid());
         }
     }
     private static void updateTask(int userinput_id, String userinput_status){
@@ -63,12 +60,9 @@ public class main {
         while (i < taskaArrayList.size() || !found){
             // itask is the object
             Task itask = taskaArrayList.get(i);
-            //System.out.println("iTask: "+itask);
-            //System.out.println("itask.getid(): "+itask.getid()+ " userid: "+userinput_id);
-            //System.out.println((itask.getid()) == (userinput_id));
+
             if ((itask.getid()) == (userinput_id)){
                 found = true;
-                //System.out.println("entered first IF");
                 // task object found
                 Status v1; // v1 is Status variable
                 if (userinput_status.equals("PENDING")){
@@ -93,27 +87,12 @@ public class main {
         while (i < taskaArrayList.size() || !found){
             // itask is the object
             Task itask = taskaArrayList.get(i);
-            //System.out.println("iTask: "+itask);
-            //System.out.println("itask.getid(): "+itask.getid()+ " userid: "+userinput_id);
-            //System.out.println((itask.getid()) == (userinput_id));
             if ((itask.getid()) == (userinput_id)){
                 found = true;
                 //System.out.println("entered first IF");
                 // task object found
-                System.out.println("TASK ID: "+ itask.getid() + "Has been successfully deleted");
+                System.out.println("TASK ID: "+ itask.getid() + " Has been successfully deleted");
                 taskaArrayList.remove(i);
-                // Status v1; // v1 is Status variable
-                // if (userinput_status.equals("PENDING")){
-                //     v1 = Status.PENDING;
-                // } else if (userinput_status.equals("IN_PROGRESS")){
-                //     v1 = Status.IN_PROGRESS;
-                // } else if (userinput_status.equals("DONE")) {
-                //     v1 = Status.DONE;
-                // } else {
-                //     //defult to pending
-                //     v1 = Status.PENDING;
-                // }
-                // itask.statusupdate(v1);
             }
             i++;
         }
